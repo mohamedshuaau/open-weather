@@ -35,7 +35,7 @@ Change the default values of the configuration file (API Key etc).
 ```php
 
 $weather = Weather::getByGeoCoordinates('39.157711', '21.249649')
-            ->getFiveDayWeatherForecast();
+                    ->getFiveDayWeatherForecast();
 
 return $weather;
 
@@ -45,7 +45,7 @@ There are different methods available for different types of data:
 ```php
 //In this example, we will get the current weather
 Weather::getByGeoCoordinates('39.157711', '21.249649')
-            ->getCurrentWeather();
+         ->getCurrentWeather();
 
 //You can chain different methods of getting the city/state/country information
 //in the above example, the geo location is used which accepts lat and long value
@@ -120,8 +120,32 @@ you may override the values with method chaining:
 
 ```php
 //lets change the language, units and mode
-Weather::language('ja')->units('metric')->mode('html')->HistoricalUV();
+Weather::language('ja')
+         ->units('metric')
+         ->mode('html')
+         ->getByCityId('2377474')
+         ->getCurrentWeather();
 ```
+
+The unit determines the units in measure and the mode is the return data type.
+
+The available units are:
+<br>
+- metric
+- imperial
+- standard
+<br>
+By default, the unit is set to standard.
+
+The available modes are:
+<br>
+- html
+- xml
+- json
+<br>
+By default, the mode is set to json.
+
+For more information in detail, you may visit [Open Weather API Docs](https://openweathermap.org/api)
 
 More features are to come in the future. This package is open for suggestions
 and improvements.
