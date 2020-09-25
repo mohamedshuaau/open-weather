@@ -289,7 +289,7 @@ class Weather {
      * Get units either from config or prop
      * @return \Illuminate\Config\Repository|\Illuminate\Contracts\Foundation\Application|mixed
      */
-    public function getUnits() {
+    private function getUnits() {
         return !$this->units ? config('weather.units') : $this->units;
     }
 
@@ -297,7 +297,7 @@ class Weather {
      * Gets the mode either from config or prop
      * @return \Illuminate\Config\Repository|\Illuminate\Contracts\Foundation\Application|mixed
      */
-    public function getMode() {
+    private function getMode() {
         return !$this->mode ? config('weather.mode') : $this->mode;
     }
 
@@ -305,7 +305,7 @@ class Weather {
      * Gets the language either from config or prop
      * @return \Illuminate\Config\Repository|\Illuminate\Contracts\Foundation\Application|mixed
      */
-    public function getLang() {
+    private function getLang() {
         return !$this->lang ? config('weather.lang') : $this->lang;
     }
 
@@ -313,7 +313,7 @@ class Weather {
      * Check if mode exist
      * @param $mode
      */
-    public function checkMode($mode) {
+    private function checkMode($mode) {
         switch ($mode){
             case 'xml':
                 $this->mode = 'xml';
@@ -331,7 +331,7 @@ class Weather {
      * Checks if the entered units exists
      * @param $unit
      */
-    public function checkUnits($unit) {
+    private function checkUnits($unit) {
         switch ($unit){
             case 'metric':
                 $this->units = 'metric';
@@ -350,7 +350,7 @@ class Weather {
      * @param array $exclude
      * @return \Illuminate\Http\Client\Response
      */
-    public function serializeOneCall(array $exclude = []) {
+    private function serializeOneCall(array $exclude = []) {
         foreach($exclude as $excludes) {
             $this->exclude .= $excludes.',';
         }
@@ -363,7 +363,7 @@ class Weather {
      * Gets API Key from config
      * @return \Illuminate\Config\Repository|\Illuminate\Contracts\Foundation\Application|mixed
      */
-    public function getAPIKey() {
+    private function getAPIKey() {
         return config('weather.api_key');
     }
 
@@ -371,7 +371,7 @@ class Weather {
      * Gets API base URL from config
      * @return \Illuminate\Config\Repository|\Illuminate\Contracts\Foundation\Application|mixed
      */
-    public function getBaseUrl() {
+    private function getBaseUrl() {
         return config('weather.base_url');
     }
 
@@ -380,7 +380,7 @@ class Weather {
      * @param $type
      * @return \Illuminate\Http\Client\Response
      */
-    public function callAPI($type) {
+    private function callAPI($type) {
 
         $base_url = $this->getBaseUrl();
         $key = $this->getAPIKey();
