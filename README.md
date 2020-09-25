@@ -32,6 +32,8 @@ Change the default values of the configuration file (API Key etc).
 ##
 #### Basic Usage:
 
+Note: Some of these methods requires a paid account from open weather and will not work as intended.
+
 ```php
 
 $weather = Weather::getByGeoCoordinates('39.157711', '21.249649')
