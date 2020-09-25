@@ -1,0 +1,14 @@
+{
+    "name": "mohamedshuaau/open-weather",
+    "description": "A simple Open Weather API Manager",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mohamed Shuaau",
+            "email": "mohammedshuaau@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
