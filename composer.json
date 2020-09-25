@@ -3,6 +3,12 @@
     "description": "A simple Open Weather API Manager",
     "type": "library",
     "license": "MIT",
+    "keywords": [
+        "laravel",
+        "open",
+        "weather",
+        "api"
+    ],
     "authors": [
         {
             "name": "Mohamed Shuaau",
