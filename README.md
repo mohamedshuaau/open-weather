@@ -96,12 +96,13 @@ Weather::getHourlyWeatherForecast(3);
 //params: limit amount (optional)
 Weather::getThirtyDayClimateForecast(3);
 
-//On Call API
-Weather::oneCall();
+//One Call API
+//params: exclude (array optional)
+Weather::oneCall(['hour', 'daily']);
 
 //Returns historical weather data
-//params: type (optional)
-Weather::historicalWeather();
+//params: limit amount (optional), type (optional), start date (optional|unix date), end date (optional|unix date)
+Weather::historicalWeather(3, 'hour', '23124444214', '234234423423');
 
 //Returns current UV
 Weather::CurrentUV();
@@ -112,7 +113,7 @@ Weather::ForecastUV();
 
 //Returns Historical UV
 //params: limit amount (optional), start date (optional|unix date), end date (optional|unix date)
-Weather::HistoricalUV();
+Weather::HistoricalUV(3, '23124444214', '234234423423');
 ```
 
 Aside from the default configurations available in the published config file,
