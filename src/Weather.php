@@ -165,7 +165,11 @@ class Weather {
      * @param string|null $type
      * @return \Illuminate\Http\Client\Response
      */
-    public function historicalWeather(string $type = null) {
+    public function historicalWeather(string $cnt = null, string $type = null, string $start = null, string $end = null) {
+        $unix_current_date_time = Carbon::now()->timestamp;
+        $this->cnt = $cnt;
+        $this->start_time = !$start ? $unix_current_date_time : $start;
+        $this->end_time = !$end ? $unix_current_date_time : $end;
         $this->type = $type;
         return $this->callAPI('history/city');
     }
